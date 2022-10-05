@@ -1,0 +1,35 @@
+{
+	"manifest_version": 2,
+	"name": "Login Cascos",
+	"version": "1.0",
+	"description": "Auto login Cascos",
+	"icons": {
+		"128": "./assets/email128.png",
+		"48": "./assets/email48.png",
+		"16": "./assets/email16.png"
+	},
+	"page_action": {
+		"default_icon": "./assets/email16.png",
+		"default_popup": "popup.html",
+		"default_title": "PageFontStyle"
+	},
+	"options_page": "options.html",
+	"background": {
+		"scripts": ["eventPage.js"],
+		"persistent": false
+	}, 
+	"content_scripts":[
+		{
+			"matches": ["https://megared.co/*", "https://www.esbus.transfiriendo.com/*"],
+			"js": ["content.js", "jquery-3.3.1.min.js","html2canvas.min.js"],
+			"css": ["content.css"]
+		}
+	],
+	"permissions": [
+		"tabs",
+		"storage",
+		"notifications",
+		"https://megared.co/*",
+		"https://www.esbus.transfiriendo.com/*"
+	]
+}
