@@ -3,7 +3,7 @@ chrome.runtime.sendMessage({todo: "showPageAction"})
 chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
     if(request.todo == "changeColor"){
         if(request.url.includes("megared.co")){
-            $('#usuario').val("352153")
+            $('#usuario').val("user")
             $('#contrasena').prop("readonly", false)
             chrome.storage.sync.get("passmega", function(budget){
                 if(budget.passmega){
